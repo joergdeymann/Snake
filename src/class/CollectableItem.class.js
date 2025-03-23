@@ -3,9 +3,14 @@ export class CollectableItem extends Item {
     images=[];
     width=40;
     height=40;
+    world=null;
     constructor(images) {
         super(images);
+    }
 
+    addWorld(world) {
+        this.world=world;
+        this.setRandomPosition();
     }
 
     setRandomPosition() {
@@ -19,5 +24,5 @@ export class CollectableItem extends Item {
         
         return counter < 1000; 
     }
-    
+
 }
