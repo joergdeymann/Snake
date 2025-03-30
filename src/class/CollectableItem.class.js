@@ -1,4 +1,3 @@
-
 export class CollectableItem extends Item {
     images=[];
     width=40;

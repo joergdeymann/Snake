@@ -5,11 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snake</title>
     <link rel="stylesheet" href="style.css">
-    <script type="module" src="app.js"></script>
+    <script type="module" src="src/app.js"></script>
 </head>
 <body>
-<canvas height="640" width="400"></canvas>
-<section class="Startmenu"></section>    
-<section class="Endscreem"></section>    
+<section id="canvas-container" class="canvas-container">
+    <canvas height="640" width="400"></canvas>
+</section>
+<section id="Startmenu" class="Startmenu"></section>    
+<section id="Endscreen" class="Endscreen d-none">
+    <article>
+        <div>Score: <span id="Endscore"></span></div>
+        <div>Play again</div>
+        <div><button onmousedown="init()">Yes</button><button>No</button></div>    
+    </article>
+</section>    
 </body>
 </html>

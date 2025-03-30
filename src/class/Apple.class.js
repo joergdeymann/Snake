@@ -1,4 +1,4 @@
-class Apple extends Item {
+export class Apple extends Item {
     IMAGES_DEFAULT = [
         "./img/apple01.png", 
         "./img/apple02.png", 

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40">
+  <defs>
+    <!-- Textur für Ziegelsteine (Nur rote Ziegel) -->
+    <pattern id="brickTexture" patternUnits="userSpaceOnUse" width="18" height="8">
+      <rect width="18" height="8" fill="red"/>
+    </pattern>
+  </defs>
+
+  <!-- Hintergrund (grauer Mörtel am oberen und unteren Rand) -->
+  <rect width="40" height="40" fill="gray"/>
+  
+  <!-- Ziegelwand -->
+  <g fill="url(#brickTexture)">
+    <!-- Erste Reihe von Ziegeln -->
+    <rect x="0"   y="0" width="18" height="8"/>
+    <rect x="20"  y="0" width="18" height="8"/>
+
+    <!-- Zweite Reihe (versetzt um eine halbe Ziegelbreite, mit haben Ziegeln) -->
+    <rect x="0"  y="10" width="8" height="8"/>
+    <rect x="10" y="10" width="18" height="8"/>
+    <rect x="30" y="10" width="10" height="8"/>
+
+    <!-- Dritte Reihe von Ziegeln -->
+    <rect x="0"   y="20" width="18" height="8"/>
+    <rect x="20"  y="20" width="18" height="8"/>
+
+    <!-- Zweite Reihe (versetzt um eine halbe Ziegelbreite, mit haben Ziegeln) -->
+    <rect x="0"  y="30" width="8" height="8"/>
+    <rect x="10" y="30" width="18" height="8"/>
+    <rect x="30" y="30" width="10" height="8"/>
+  </g>
+</svg>

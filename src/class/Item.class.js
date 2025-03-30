@@ -1,14 +1,28 @@
-class Item {
+// import { SnakeHead } from "./SnakeHead.class.js";
+
+export class Item {
+    IMAGES_DEFAULT=[];
     images=[];
+    x=0;
+    y=0;
     width=40;
     height=40;
     currentImageIndex=0;
     world=null;
     name="SnakeHead"
     score=0;
+    
 
 
-    constructor(images) {
+    constructor() {
+
+    }
+
+    get image() {
+        return this.images[this.currentImageIndex];
+    }
+    
+    setDefaultImages(images=this.IMAGES_DEFAULT) {
         this.addImages(images);
         this.addAnimation();    
     }
@@ -18,8 +32,11 @@ class Item {
     }
 
     addImages(imageFiles) {
+        if (imageFiles.length == 0) return;
         for(let file of imageFiles) {
-            this.images.push(new Image(file))
+            let img=new Image();
+            img.src=file;
+            this.images.push(img);
         }
     }
 
@@ -29,10 +46,10 @@ class Item {
     
     isColliding(item) {
         let collision=!(
-            this.item.x>item.x+item.width || 
-            this.item.x+this.item.width<item.x ||
-            this.item.y>item.y+item.height ||
-            this.item.y+this.item.height<item.y
+            this.x>=item.x+item.width || 
+            this.x+this.width<=item.x ||
+            this.y>=item.y+item.height ||
+            this.y+this.height<=item.y
         );
         if (collision) {
             this.lastCollisionItem=item;
@@ -42,8 +59,9 @@ class Item {
     }
 
     isCollidingAny() {
-        for(let item of this.world.items) {
-            if (this.isColliding(item)) {
+        for(let item of this.world.gui.items) {
+            //  if (item.name != "SnakeHead" && this.isColliding(item)) {
+            if (item != this && this.isColliding(item)) {
                 return true;
             }
         };
